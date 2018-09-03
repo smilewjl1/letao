@@ -1,0 +1,114 @@
+/*引入base.less文件*/
+@import "base.less";
+
+/*main部分样式*/
+#main{
+    background-color: #fff;
+    /*轮播部分样式*/
+    #slide{
+        a{
+            display: block;
+            >img{
+                width: 100%;
+            }
+        }
+    }
+    /*导航部分样式*/
+    #nav{
+        padding: 10px;
+        a{
+            display: block;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    /*广告区域样式*/
+    #banner{
+        padding: 0 10px;
+        .left{
+            a{
+                display: block;
+                >img{
+                    width: 50%;
+                    float: left;
+                    height: 120px;
+                }
+            }
+        }
+        .right{
+            a{
+                display: block;
+                >img{
+                    width: 100%;
+                    height: 240px;
+                }
+            }
+        }
+    }
+    /*品牌专区部分*/
+    #brand{
+        padding: 5px 10px;
+        .title{
+           >img{
+               width: 100%;
+           }
+        }
+        .content{
+            .mui-row{
+                .mui-col-xs-3{
+                    >a{
+                        display: block;
+                        >img{
+                            width: 100%;
+                        }
+                    }
+                } 
+            } 
+        }       
+    }
+    /*运动专区*/
+    #sport,#women,#man{
+        padding: 5px 10px;
+        .title{
+            >img{
+                width: 100%;
+            }
+        }
+        .content{
+            .mui-row{
+                >div{
+                    padding: 0 5px;
+                    &:nth-of-type(n+3) {
+                        .product {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+                .product{
+                    text-align: center;
+                    box-shadow: 0px 0px 1px #ccc;
+                    padding-bottom: 10px;
+                    .product-img {
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .product-price {
+                        font-size: 12px;
+                        span {
+                            color: red;
+                        }
+                        del {
+                            color: #ccc;
+                        }
+                    }
+                    .product-buy {
+                        background-color: @mainColor;
+                        border-color: @mainColor;
+                    }
+                }
+            } 
+        }       
+    }
+}

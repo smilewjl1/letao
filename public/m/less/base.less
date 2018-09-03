@@ -1,0 +1,125 @@
+/*定义主题色*/
+@mainColor:#006699;
+
+/* 样式初始化文件 */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    /* 移动端一般会设置盒模型为border-box 防止边框和padding撑大盒子超出屏幕宽度出现滚动条 */
+    box-sizing: border-box;
+    /*移动端a标签按住的高亮背景色 设置透明即可*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+li {
+    list-style: none;
+}
+
+input {
+    /* 去除输入框的内外边框 */
+    border: 0;
+    outline: 0;
+}
+
+img {
+    /* 去掉图片的边框 */
+    border: none;
+    /* 去掉图片底部3px的间距 */
+    vertical-align: middle;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+/* 清除浮动的公共类 */
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*头部的公共样式*/
+#header{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    top:0;
+    background-color: @mainColor;  
+    z-index: 10;  
+    >h4{
+        color:#fff;
+        line-height: 45px;
+        margin: 0;
+        font-weight: normal;
+        text-align: center;
+    }
+    >a{
+        color: #fff;
+        &.fa-search{
+            font-size: 20px;
+            position: absolute;
+            right: 10px;
+            top: 12px;
+        }
+        &.fa-arrow-left{
+            font-size: 20px;
+            position: absolute;
+            left:10px;
+            top:12px;
+        }
+    }
+    .search-form{
+        padding: 0 40px;
+        width: 100%;
+        .search{
+            margin: 7.5px 0;
+            background-color: #fff;
+            padding: 0 10px;
+            height: 30px;
+        }
+    }   
+}
+html,body{
+    height: 100%;
+}
+body{
+    padding: 45px 0;
+}
+#main{
+    position: relative;
+    height: 100%;
+}
+
+/*footer部分样式代码*/
+#footer{
+    width: 100%;
+    height: 45px;
+    background-color: @mainColor;
+    position: fixed;
+    bottom: 0;
+    .mui-row{
+        >div{
+            >a{
+                color: #fff;
+                display: block;
+                font-size: 12px;
+                text-align: center;
+                padding: 6px 0;
+                &.active {
+                    color: orange;
+                }
+                >i{
+                    display: block;
+                    font-size: 14px;
+                }
+                >span{
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import "base.less";
+
+#main{
+    background-color: #fff;
+    .search{
+        display: flex;
+        padding: 10px;
+        .input-search{
+            flex: 1;
+            height: 30px;
+            background-color: #fff;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 0;
+            border: 1px solid @mainColor;
+            border-radius: 6px 0 0 6px;
+        }
+        .btn-search{
+            width: 60px;
+            height: 30px;
+            background-color: @mainColor;
+            border-color: @mainColor;
+            border-radius: 0px 6px 6px 0px;
+        }
+    }
+    .history{
+        padding: 0 10px;
+        .title{
+            line-height: 30px;
+            font-size: 14px;
+        }
+        .content{
+            >ul{
+                border:1px solid #ccc;
+                border-radius:6px;
+                >li{
+                    line-height: 40px;
+                    height: 40px;
+                    padding-left: 10px;
+                    border-bottom: 1px solid #ccc;
+                    position: relative;
+                    >a{
+						display: block;
+						font-size: 14px;
+					}
+					>i{
+						position: absolute;
+						right: 10px;
+						top: 10px;
+						font-size: 14px;
+						top: 12px;
+					}
+					&:last-of-type{
+						border-bottom: 0px;
+					}
+                }
+            }
+        }
+    }
+}

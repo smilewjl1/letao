@@ -11,7 +11,7 @@
     <!--2.引入字体图标的css文件-->
     <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
     <!--3.引入主页的less文件-->
-    <link rel="stylesheet/less" href="less/cate.less">
+    <link rel="stylesheet/less" href="less/search.less">
     <!--4.引入less的编辑器文件-->
     <script src="lib/less/less.js"></script>
 </head>
@@ -20,31 +20,28 @@
     <!--头部区域-->
     <header id="header">
         <a href="#" class="fa fa-arrow-left"></a>
-        <form action="" class="search-form">
-            <input type="search" placeholder="请输入要搜索的商品" class="search">
-        </form>
-        <a href="search.html" class="fa fa-search"></a>
+        <h4>搜索中心</h4>
     </header>
     <main id="main">
-        <div class="cate-left">
-            <ul>
-                <li class="active">
-                    <a href="#">运动馆</a>
-                </li>           
-            </ul>
+        <div class="search">
+            <input type="search" class="input-search" placeholder="输入你喜欢的商品">
+            <button class="mui-btn-primary btn-search">搜索</button>
         </div>
-        <div class="cate-right">
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <div class="mui-row">
-                        <div class="mui-col-xs-4">
-                            <a href="#">
-                                <img src="images/brand1.png" alt="">
-                                <p>耐克</p>
-                            </a>
-                        </div>         
-                    </div>
-                </div>
+        <div class="history">
+            <div class="title mui-clearfix">
+                <span class="mui-pull-left">搜索历史</span>
+                <a class="mui-pull-right btn-clear">
+                    <i class="fa fa-trash btn"></i>清空记录</a>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>耐克</span>
+                        </a>
+                        <i class="fa fa-close"></i>
+                    </li>
+                </ul>
             </div>
         </div>
     </main>
@@ -77,23 +74,18 @@
             </div>
         </div>
     </footer>
-    <script type="text/html" id="cateLeft">
-        {{ each rows value i}}
-            <li class="{{i == 0?'active': ''}}"><a href="#" data-id= "{{ value.id }}">{{ value.categoryName }}</a></li>
-        {{ /each }}
-    </script>
-    <script type="text/html" id="cateRight">
+    <script type="text/html" id="historyTem">
     {{ if rows.length > 0}}
         {{ each rows value }}
-        <div class="mui-col-xs-4">
-            <a href="#">
-                <img src="{{ value.brandLogo }}" alt="">
-                <p>{{ value.brandName }}</p>
-            </a>
-        </div>
+        <li>
+                <a href="#">
+                    <span>{{value.search }}</span>
+                </a>
+                <i class="fa fa-close delete" data-id="{{ value.id }}"></i>
+            </li>
         {{ /each }}
     {{ else }}
-        <p>没有更多结果</p>
+            <li><p>当前没有搜索历史</p></li>
     {{ /if }}
     </script>
     <!--5.引入mui的js文件-->
@@ -103,7 +95,7 @@
     <!--7.引入模板引擎的js文件-->
     <script src="lib/artTemplate/template-web.js"></script>
     <!--8.引入主页的js文件-->
-    <script src="js/cate.js"></script>
+    <script src="js/search.js"></script>
 </body>
 
 </html>

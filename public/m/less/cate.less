@@ -1,2 +1,52 @@
 @import "base.less";
 
+/*中间main区域部分样式*/
+#main{
+    display: flex;
+    background-color: #ccc;
+    .cate-left{
+        width: 80px;
+       >ul{
+           >li{
+               &.active{
+                   >a{
+                       color: @mainColor;
+                       background-color: #ccc;
+                   }
+               }
+               >a{
+                   width: 80px;
+                   height: 45px;
+                   display: block;
+                   font-size: 14px;
+                   background-color: #fff;
+                   border-bottom: 1px solid #ccc;
+                   line-height: 45px;
+                   text-align: center;
+               }
+           }
+       }         
+    }
+    .cate-right{
+        flex: 1;
+        position: relative;
+        .mui-scroll{
+			/* 如果设置100%和父元素一样还是无法超出 101%超出了就可以滚动 */
+			min-height: 101%;
+		}
+        .mui-row{
+            padding:10px;
+            a{
+                display: block;
+                text-align: center;
+                img{
+                    width: 100%;
+                }
+                p{
+                    background-color: #fff;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

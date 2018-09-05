@@ -1,2 +1,87 @@
 /*引入基础样式文件*/
 @import "base.less";
+
+/*main部分区域样式代码*/
+#main{
+    .mui-scroll{
+        /* 如果设置100%和父元素一样还是无法超出 101%超出了就可以滚动 */
+        min-height: 101%;
+    }
+    background-color: #fff;
+    .search{
+        display: flex;
+        padding: 10px;
+        .input-search{
+            flex: 1;
+            height: 30px;
+            background-color: #fff;
+            font-size: 14px;
+            text-align: left;
+            margin-bottom: 0;
+            border: 1px solid @mainColor;
+            border-radius: 6px 0 0 6px;
+        }
+        .btn-search{
+            width: 60px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: @mainColor;
+            border-color: @mainColor;
+            border-radius: 0px 6px 6px 0px;
+        }
+    }
+    .title{
+        margin-top: 10px;
+        background-color: #eee;
+        display: flex;
+        height: 30px;
+        >a{
+            flex: 1;
+            display: block;
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+        }
+    }
+    /*product商品部分区域样式*/
+    .product{
+        padding: 10px;
+        .mui-row{  
+            >div{
+                padding: 0 5px;    
+                >a{
+                    display: block;
+                    border: 1px solid #666;
+                    text-align: center;
+                    >img{
+                        width: 100%;
+                    }
+                    >p{
+                        font-size: 14px;
+                        text-align: center;
+                        &.name{
+                            width: 100%;
+                            height: 36px;
+                            overflow: hidden;
+                            line-height: 18px;
+                        }
+                        .price{
+                            color:red;
+                            font-size: 14px;
+                        }
+                        del{
+                            padding-left: 10px;
+                            font-size: 10px;
+                        }
+                    }
+                    .btn-buy{
+                        margin-bottom: 20px;
+                        background-color:@mainColor;
+                    }
+                }
+
+            }
+        }
+    }
+}

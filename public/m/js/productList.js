@@ -196,7 +196,7 @@ LeoTao.prototype = {
 
         })
     },
-    //加入购物车事件
+    //点击立即购买事件
     productBuy: function () {
         $('.product .mui-row').on('tap', '.btn-buy', function () {
             //console.log(this);  

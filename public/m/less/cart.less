@@ -1,2 +1,99 @@
 @import "base.less";
 
+body{
+    padding-bottom: 80px;
+}
+
+#main{
+    background-color: #fff;
+    #cartList{
+        .mui-table-view{
+            li{
+                .mui-slider-right{
+                    a{
+                        font-size: 20px;
+                    }
+                }
+                .mui-pull-left{
+                    text-align: center;
+                    img{
+                        display: block;
+					    max-width: 60px;
+					    width: 60px;
+					    height: 60px;
+                    }
+                    input{
+                        margin-top: 10px;
+                    }
+                }
+                .mui-media-body{
+                    padding:0 15px;
+                    .product-name{
+                        white-space: normal;
+                    }
+                    .product-price{
+                        .price{
+                            color: red;
+                            font-size: 14px;
+                        }
+                        .oldPrice{
+                            font-size: 12px;
+                            color:#ccc;
+                        }
+                    }
+                    .product-size{
+                        .size{
+                            font-size: 13px;
+                            color:#666;
+                        }
+                    }
+                    .product-num{
+                        position: absolute;
+                        bottom: 20px;
+                        right: 45px;
+                        font-size: 14px;
+                        color: #666;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#count{
+    position: fixed;
+    bottom: 45px;
+    width: 100%;
+    border-top: 1px solid #ccc;
+	background-color: #fff;
+    .mui-pull-left{
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 30px;
+		padding-left: 20px;
+		color:red;
+	}
+}
+
+.product-size{
+    .btn-size{
+        display: inline-block;
+        width: 30px;	
+        height: 30px;	
+        line-height: 30px;	
+        text-align: center;	
+        border:1px solid #ccc;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        &:first-of-type{
+            margin-left: 0;
+        }
+        &.active{
+            background-color: orange;
+        }
+    }
+}
+
+.mui-popup-inner{
+    padding: 10px;
+}

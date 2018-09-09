@@ -92,7 +92,13 @@ LeoTao.prototype = {
                    if(data.error){
                         window.location.href = 'login.html?returnUrl=detail.html?id='+that.id;
                    }else{
-                   
+                        mui.confirm('商品添加成功,要去购物车查看吗?','温馨提示',['确认','取消'],function(e){
+                            if(e.index == 0){
+                                window.location.href = "cart.html";
+                            }else if(e.index == 1){
+                                mui.toast('你可以查看更多商品,或者去购物车购买当前已添加商品',{ duration:'2000', type:'div' });
+                            }
+                        });
                    }
                 }
             });

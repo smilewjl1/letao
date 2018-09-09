@@ -11,7 +11,7 @@
     <!--2.引入字体图标的css文件-->
     <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
     <!--3.引入主页的less文件-->
-    <link rel="stylesheet/less" href="less/searchList.less">
+    <link rel="stylesheet/less" href="less/productList.less">
     <!--4.引入less的编辑器文件-->
     <script src="lib/less/less.js"></script>
 </head>
@@ -19,24 +19,24 @@
 <body>
     <!--头部区域-->
     <header id="header">
-        <a href="search.html" class="fa fa-arrow-left"></a>
+        <a href="javascript:history.back()" class="fa fa-arrow-left"></a>
         <h4>搜索中心</h4>
     </header>
     <main id="main">
-        <div class="mui-scroll-wrapper">
+        <div id="refreshContainer" class="mui-scroll-wrapper">
             <div class="mui-scroll">
                 <div class="search">
                     <input class="input-search" type="search" placeholder="搜索你喜欢的商品">
-                    <a class="btn-search mui-btn-primary" href="">搜索</a>
+                    <a class="btn-search mui-btn-primary" href="javascript:void(0)">搜索</a>
                 </div>
                 <div class="title">
                     <a data-type="time" href="#">上架时间
                         <span class="fa fa-angle-down"></span>
                     </a>
-                    <a data-type="price" href="#">价格
+                    <a data-sort-type="price" data-sort="1" href="#">价格
                         <span class="fa fa-angle-down"></span>
                     </a>
-                    <a data-type="num" href="#">销量
+                    <a data-sort-type="num" data-sort="1" href="#">销量
                         <span class="fa fa-angle-down"></span>
                     </a>
                     <a data-type="sale" href="#">折扣
@@ -88,7 +88,7 @@
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="#">
+                <a href="cart.html">
                     <i class="fa fa-shopping-cart"></i>
                     <span>购物车</span>
                 </a>
@@ -101,6 +101,22 @@
             </div>
         </div>
     </footer>
+
+    <script type="text/html" id="productListTem">
+        {{ each data value }}
+        <div class="mui-col-xs-6">
+            <a href="#">
+                <img src="{{value.pic[0].picAddr}}" alt="">
+                <p class="name">{{value.proName}}</p>
+                <p>
+                    <span class="price">¥{{value.price}}</span>
+                    <del>¥{{value.oldPrice}}</del>
+                </p>
+                <button class="mui-btn-primary btn-buy" data-id="{{ value.id }}">立即购买</button>
+            </a>
+        </div>
+        {{ /each }}
+    </script>
     <!--5.引入mui的js文件-->
     <script src="lib/mui/js/mui.js"></script>
     <!--6.引入zepto的js文件 操作元素发送请求-->
@@ -108,7 +124,7 @@
     <!--7.引入模板引擎的js文件-->
     <script src="lib/artTemplate/template-web.js"></script>
     <!--8.引入主页的js文件-->
-    <script src="js/searchList.js"></script>
+    <script src="js/productList.js"></script>
 </body>
 
 </html>

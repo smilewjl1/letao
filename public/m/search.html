@@ -78,11 +78,11 @@
     {{ if rows.length > 0}}
         {{ each rows value }}
         <li>
-                <a href="#">
-                    <span>{{value.search }}</span>
-                </a>
+            <a href="#"data-search="{{value.search}}">
+                <span>{{value.search }}</span>
+            </a>
                 <i class="fa fa-close delete" data-id="{{ value.id }}"></i>
-            </li>
+        </li>
         {{ /each }}
     {{ else }}
             <li><p>当前没有搜索历史</p></li>

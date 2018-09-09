@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>乐淘移动端-分类</title>
+    <title>乐淘移动端-登录中心</title>
     <!--1.引入mui的css文件-->
     <link rel="stylesheet" href="lib/mui/css/mui.css">
     <!--2.引入字体图标的css文件-->
     <link rel="stylesheet" href="lib/fontAwesome/css/font-awesome.css">
     <!--3.引入主页的less文件-->
-    <link rel="stylesheet/less" href="less/cate.less">
+    <link rel="stylesheet/less" href="less/login.less">
     <!--4.引入less的编辑器文件-->
     <script src="lib/less/less.js"></script>
 </head>
@@ -20,51 +20,41 @@
     <!--头部区域-->
     <header id="header">
         <a href="#" class="fa fa-arrow-left"></a>
-        <form action="" class="search-form">
-            <input type="search" placeholder="请输入要搜索的商品" class="search">
-        </form>
-        <a href="search.html" class="fa fa-search"></a>
+        <h4>登录</h4>
     </header>
     <main id="main">
-        <div class="cate-left">
-            <ul>
-                <li class="active">
-                    <a href="#">运动馆</a>
-                </li>           
-            </ul>
-        </div>
-        <div class="cate-right">
-            <div class="mui-scroll-wrapper">
-                <div class="mui-scroll">
-                    <div class="mui-row">
-                        <div class="mui-col-xs-4">
-                            <a href="#">
-                                <img src="images/brand1.png" alt="">
-                                <p>耐克</p>
-                            </a>
-                        </div>         
-                    </div>
-                </div>
+        <form class="mui-input-group">
+            <div class="mui-input-row">
+                <label>用户名</label>
+                <input type="text" class="mui-input-clear username" placeholder="请输入用户名">
             </div>
-        </div>
+            <div class="mui-input-row">
+                <label>密码</label>
+                <input type="password" class="mui-input-password password" placeholder="请输入密码">
+            </div>
+            <div class="mui-button-row">
+                <button type="button" class="mui-btn mui-btn-primary btn-login">登录</button>
+            </div>
+        </form>
+        <a href="register.html" class="register">免费注册</a>
     </main>
     <!--底部区域-->
     <footer id="footer">
         <div class="mui-row">
             <div class="mui-col-xs-3">
-                <a href="index.html">
+                <a href="index.html" class="active">
                     <i class="fa fa-home"></i>
                     <span>首页</span>
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="cate.html" class="active">
+                <a href="cate.html">
                     <i class="fa fa-bars"></i>
                     <span>分类</span>
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="cart.html">
+                <a href="#">
                     <i class="fa fa-shopping-cart"></i>
                     <span>购物车</span>
                 </a>
@@ -77,25 +67,6 @@
             </div>
         </div>
     </footer>
-    <script type="text/html" id="cateLeft">
-        {{ each rows value i}}
-            <li class="{{i == 0?'active': ''}}"><a href="#" data-id= "{{ value.id }}">{{ value.categoryName }}</a></li>
-        {{ /each }}
-    </script>
-    <script type="text/html" id="cateRight">
-    {{ if rows.length > 0}}
-        {{ each rows value }}
-        <div class="mui-col-xs-4">
-            <a href="#">
-                <img src="{{ value.brandLogo }}" alt="">
-                <p>{{ value.brandName }}</p>
-            </a>
-        </div>
-        {{ /each }}
-    {{ else }}
-        <p>没有更多结果</p>
-    {{ /if }}
-    </script>
     <!--5.引入mui的js文件-->
     <script src="lib/mui/js/mui.js"></script>
     <!--6.引入zepto的js文件 操作元素发送请求-->
@@ -103,7 +74,7 @@
     <!--7.引入模板引擎的js文件-->
     <script src="lib/artTemplate/template-web.js"></script>
     <!--8.引入主页的js文件-->
-    <script src="js/cate.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

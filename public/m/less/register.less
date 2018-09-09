@@ -1,0 +1,59 @@
+/*引入基础样式*/
+@import "base.less";
+
+#main{
+    background-color: #fff;
+    .mui-input-group{
+        >div{
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+            width: 90%;
+            margin-left: 20px;
+            border-radius: 5px;
+            .btn-register{
+                width: 100%;
+                height: 40px;
+                padding-top: 0;
+                padding-bottom: 0;
+                font-size: 18px;
+                border-radius: 5px;
+            }
+            &:nth-of-type(5){
+                border: none;
+                display: flex;
+                label{
+                    width: 90px;
+                    height: 40px;
+                }
+            }
+            .Vcode{
+                height: 100%;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                flex: 1;
+            }
+            .btn_getCode{
+                width: 100px;
+                position: absolute;
+                margin-left: 5%;
+                height: 40px;
+                right: 0;
+            }
+            &:last-of-type{
+                padding-top: 0;
+                height: 40px;
+            }
+            &:first-of-type{
+                margin-top: 10px;
+            }
+        }
+    }
+    .login{
+        display: block;
+        font-size: 13px;
+        color:@mainColor;
+        position: absolute;
+        right: 10px;
+        top:300px;
+    }
+}
